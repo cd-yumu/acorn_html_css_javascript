@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step03_ul.html</title>
+    <style>
+        .my-ul{
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+
+
+        /* 클래스명이 my-li의 자식중에서 li 선택
+        인접한 자식은 > 사용, 자손은 그냥 띄어쓰기만
+        자식도 자손에 포함됩니다. 따라서 혼돈의 소지가 없다면 > 대신 그냥 띄어쓰기 */
+        .my-ul > li{
+            display: inline;
+        }
+        /* display: block / inline */
+
+
+
+
+
+        .my-link{
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        .my-link li{
+            display: inline;
+        }
+        .my-link a{
+            text-decoration: none;
+            color: cornflowerblue;
+        }
+        .my-link a:hover{
+            text-decoration: underline;
+            color: rgb(127, 121, 125);
+        }
+
+
+    </style>
+</head>
+<body>
+    <h1>순서 없는 목록 unordered list <br>: ul 요소</h1>
+    
+    <h2>친구 목록입니다</h2>
+    <ul>
+        <li>김구라</li>
+        <li>원숭이</li>
+        <li>해골</li>
+    </ul>    
+    
+    <h2>친구 목록입니다</h2>
+    <ul class="my-ul">
+        <li>김구라</li>
+        <li>원숭이</li>
+        <li>해골</li>
+    </ul>
+    
+    
+
+
+
+
+
+    <h2>바로 가기 목록입니다.</h2>
+    <ul class="my-link">
+        <li><a href="https://naver.com">네이버</a></li>
+        <li><a href="https://daum.net">다음</a></li>
+        <li><a href="https://acornacademy.co.kr">에이콘</a></li>
+    </ul>
+
+
+
+    
+    
+    
+
+
+</body>
+</html>

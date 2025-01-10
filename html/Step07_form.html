@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step07_home.html</title>
+    <style>
+        /* 전체 스타일 */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* 컨테이너 스타일 */
+        .container {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: #4CAF50;
+        }
+
+        /* 폼 스타일 */
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            font-size: 1rem;
+            margin-bottom: 5px;
+            text-align: left;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+            width: 100%;
+        }
+
+        input[type="text"]:focus {
+            outline: none;
+            border-color: #4CAF50;
+            box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: white;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-bottom: 5px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>폼 요소 작성하기</h1>
+        <!-- 
+        action: 요청 경로
+        method: 요청 방식
+            ㄴ post : 주소창에 안 보임 (db에 update) (민감한 정보기 때문에 그 사람의 자격 증명을 확인 한다.)
+            ㄴ get : 주소창에 보임 (default) (응답을 잘 주지만)
+
+        for 와 id는 일치 해야 한다.
+        name은 서버에서 추출하는 기준
+        send는 요청 경로
+        mothod는 요청 방식
+         -->
+        <form action="send" method="get"> 
+            <label for="msg">메시지</label>
+            <input type="text" name="msg" id="msg" placeholder="입력...">
+            <input type="email">
+            <input type="number">
+            <input type="color">
+            <input type="date">
+            <button type="submit">전송</button>
+            <button type="reset">취소</button>
+        </form>
+
+
+        
+
+        
+
+    </div>
+</body>
+</html>

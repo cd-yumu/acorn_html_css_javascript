@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test02.html</title>
+    <style>
+        /* input{
+            display: block;
+        } */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form action="send" method="get" >
+            <!-- 
+            form 으로 요청 시 데이터 같이 전송 할 때
+            ? name = value & name = value ... 형식으로 전송
+
+            id 값은 label 태그의 for 값과 바운딩 해주기 위한 것
+
+             -->
+            <input type="text" name="text" value="my-text">
+            <input type="email" name="email" value="my-mail@naver.com">
+
+            <fieldset>
+                <legend>성별 선택</legend>
+                <input type="radio" name="gender" value = "male"> 남자
+                <input type="radio" name="gender" value = "female"> 여자
+                <!-- input type radio
+                name 값으로 그룹핑 되고 
+                value 값으로 값이 넘어간다 (없으면 on 값) -->
+            </fieldset>
+
+            <fieldset>
+                <legend>취미 정보 선택</legend>
+                <input type="checkbox" name="hobby" value="leather">가죽 공예
+                <input type="checkbox" name="hobby" value="drum">드럼
+                <input type="checkbox" name="hobby" value="pinao">피아노
+                <!-- input type checkbox
+                name 값이 없으면 전송되지 않음 (이름이 있어야 전송 가능)
+                즉, name = value 형식으로 전송
+                 -->
+            </fieldset>
+
+
+            <!-- select option  -->
+            <select name="job">
+                <option value="">선택</option>
+                <option value="doctor">의사</option>
+                <option value="teacher">선생님</option>
+                <option value="programmer">프로그래머</option>
+            </select>
+
+
+            <select name="lunch_menu" multiple>
+                <optgroup label="김밥천국">
+                    <option value="라면">라면</option>
+                    <option value="쫄면">쫄면</option>
+                    <option value="김밥">김밥</option>
+                </optgroup>
+                <optgroup label="우육면갈래?">
+                    <option value="우육탕면">우</option>
+                    <option value="도가니탕면">도</option>
+                    <option value="새우완탕면">새</option>
+                </optgroup>
+            </select>
+
+
+
+            <input type="file" name="the-file">
+
+            <br>
+            <textarea name="the-comment">my - comment</textarea>
+
+
+
+
+
+
+
+
+
+            <br><br><br>
+            <button type="submit">제출</button>
+            <button type="reset">취소</button>
+        </form>
+    </div>
+</body>
+</html>

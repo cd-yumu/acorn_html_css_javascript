@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>loop2.html</title>
+</head>
+<body>
+
+    <input type="text" id="text" placeholder="아무 문자를 입력하세요...">
+    <button onclick="saveNumber()">button</button>
+
+    <fieldset>
+        <legend>배열</legend>
+        <!-- <label for="">empty_arr5 : </label>  -->
+        empty_arr5 : <p id = "arr5"></p>
+    </fieldset>
+
+
+    <br><br><br>
+
+    <video src="../html/media/mp4video.mp4" width="800" height="800" controls></video>
+
+
+    <script>
+
+        // 빈 배열을 만들고 배열에 숫자 0 - 9 를 순서대로 저장해 보세요
+        let empty_arr1 = [];
+        for(let i = 0 ; i < 10 ; i ++){
+            empty_arr1.push(i)
+        }
+
+        // 빈 배열을 만들고 배열에 숫자 1 - 10 를 순서대로 저장해 보세요
+        let empty_arr2 = [];
+        for(let i = 0 ; i < 10 ; i ++){
+            empty_arr2.push(i+1);
+        }
+
+        // 빈 배열을 만들고 배열에 숫자 1 - 100 를 순서대로 저장해 보세요
+        let empty_arr3 = [];
+        for(let i = 0 ; i < 100 ; i ++){
+            empty_arr3.push(i+1);
+        }
+        
+
+        // 빈 배열을 만들고 배열에 숫자 1 - 100 를 순서대로 저장한 다음
+        // 모든 숫자의 합을 콘솔창에 출력
+        let empty_arr4 = [];
+        let sum = 0;
+        for(let i = 0 ; i < 100 ; i ++){
+            empty_arr4.push(i+1);
+            sum += empty_arr4[i];
+        }
+        console.log("empty_arr4의 모든 숫자의 합: "+sum);
+
+        // input 요소와 button 을 배치하고 그 버튼을 누르면
+        // 입력한 문자열이 빈 배열에 계속 누적되도록
+        let empty_arr5 = [];
+        function saveNumber(){
+            const text = document.querySelector("#text").value;
+            empty_arr5[empty_arr5.length] = text;
+
+
+
+
+            // 배열에 넣은 후 텍스트 창의 텍스트 clear
+            document.querySelector("#text").value = "";
+
+            // 배열에 넣은 값 표시
+            document.querySelector("#arr5").innerText = document.querySelector("#arr5").innerText + " " + text +" |";
+        };
+
+
+
+
+
+
+
+        // let names = ["김구라", "해골", "원숭이", "주뎅이", "덩어리"];
+
+        // for(let i = 0; i<names.length;i++){
+        //     console.log("names 배열의 " + i +"번째에는 " + names[i]);
+        // }
+    </script>
+</body>
+</html>

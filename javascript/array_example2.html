@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>array_example2.html</title>
+</head>
+<body>
+    <p>클라이언트야 입력한 메세지를 저장하고 싶으면
+        <br>1. 마우스 클릭
+        <br>2. 검사
+        <br>3. 콘솔 선택
+        <br>4. saveMessage() 를 입력해서 확인을 누르면 돼!
+    </p>
+
+    <button onclick="saveMessage()">메시지 저장하기</button>
+
+
+
+    <script>
+        // 입력한 문자열을 누적시킬 빈 배열을 페이지 로딩 시점에 준비하기
+        let msgs = [];
+
+
+        function saveMessage(){
+            // prompt 함수를 이용해서 문자열 한 줄을 입력 받고 
+            const msg = prompt();
+            // 입력 받은 문자열을 msgs 배열에 저장해 보세요
+            msgs.push(msg);
+            
+            
+
+        };
+    </script>
+</body>
+</html>

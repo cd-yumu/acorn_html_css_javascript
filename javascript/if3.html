@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>if3.html</title>
+</head>
+<body>
+    <input type="text" id="jumsu" placeholder="0~100 점수입력...">
+    <button onclick="check()">판정하기</button>
+    <p id="result"></p>
+
+    <script>
+        function check (){
+            const jumsu = document.querySelector("#jumsu").value;
+            
+            if(jumsu >= 90){
+                document.querySelector("#result").innerText = "A 입니다.";
+            }else if(jumsu >= 80){
+                document.querySelector("#result").innerText = "B 입니다.";
+            }else if(jumsu >= 70){
+                document.querySelector("#result").innerText = "C 입니다.";
+            }else if(jumsu >= 60){
+                document.querySelector("#result").innerText = "D 입니다.";
+            }else{
+                document.querySelector("#result").innerText = "F 입니다.";
+                document.querySelector("#result").style.color = "#ff0000";
+                document.querySelector("#result").style.backgroundColor = "#000000";
+                document.querySelector("#result").style.fontSize = "50px";
+            }
+        }
+    </script>
+
+</body>
+</html>

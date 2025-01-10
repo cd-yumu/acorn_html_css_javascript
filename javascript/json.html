@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>json.html</title>
+</head>
+<body>
+    <h1>json 문자열 사용해보기</h1>
+
+    <button id="printBtn">출력하기</button>
+
+    <h2>회원정보</h2>
+    <p>
+        번호 : <strong id="num"></strong>   <br>
+        이름 : <strong id="name"></strong>  <br>
+        주소 : <strong id="addr"></strong>  <br>
+    </p>
+
+    <h2>좋아하는 음식 목록</h2>
+    <ul>
+
+    </ul>
+
+
+
+    <script>
+
+        const json = `{"num":1, "name":"김구라", "addr":"노량진"}`;
+        // 콜론의 좌측은 반드시 ""로 감싸야 합니다.
+        const json2 = `["떡볶이","라면","김밥"]`;
+        
+
+        // 출력하기 버튼을 누르면 동작하기
+        document.querySelector("#printBtn").addEventListener("click", function(){
+
+            // 회원정보 출력
+
+            // 회원 정보 json 정보를 object 형식으로 변경
+            const mem = JSON.parse(json);
+
+            // 각 string id 요소의 innerText 에 기입
+            document.querySelector("#num").innerText = mem.num;
+            document.querySelector("#name").innerText = mem.name;
+            document.querySelector("#addr").innerText = mem.addr;
+
+
+            // 좋아하는 음식 목록 출력
+
+            // 음식 정보 json 을 array 형식으로 변경
+            const foods = JSON.parse(json2);
+            
+            // // li 요소 만들기
+            // const li1 = document.createElement("li");
+            // const li2 = document.createElement("li");
+            // const li3 = document.createElement("li");
+
+            // li1.innerText = foods[0];
+            // li2.innerText = foods[1];
+            // li3.innerText = foods[2];
+
+            // // ul의 자식요소로 li 로 추가
+            // document.querySelector("ul").append(li1);
+            // document.querySelector("ul").append(li2);
+            // document.querySelector("ul").append(li3);
+
+
+            const li = `
+                <li>${foods[0]}</li>
+                <li>${foods[1]}</li>
+                <li>${foods[2]}</li>
+            `
+
+            document.querySelector("ul").insertAdjacentHTML("beforeend",li);
+
+
+            // // 반복문 돌면서 
+            // for(let i = 0 ; i < foods.length ; i++){
+            //     // li 요소 만들어서
+            //     const li = document.createElement("li");
+            //     // i 번째에 저장된 문자열로 innerText 를 출력하고
+            //     li.innerText = foods[i];
+            //     // ul 에 li 를 추가하기
+            //     document.querySelector("ul").append(li);
+            // }
+
+
+
+
+        });
+
+    </script>
+</body>
+</html>

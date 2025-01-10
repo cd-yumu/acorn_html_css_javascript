@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step03_dl.html</title>
+    <style>
+        html{
+            font-size: 20px;
+        }
+        /* 1 rem
+        : html 요소의 font-size / default: 16px 
+        html{
+            font-size: 20px; 
+        } */
+
+
+
+
+        .container{
+            border: 1px dotted rgb(255, 84, 84);
+            max-width: 768px;
+            margin: 0 auto;
+        }
+        dt{
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: rgb(0, 157, 157);
+            margin-top: 20px;
+        }
+        dd{
+            
+            font-size: 1rem;
+            color: rgb(14, 94, 94);
+            margin-left: 20px;
+            margin-bottom: 10px;
+        }
+
+
+        
+    </style>
+</head>
+<body>
+    <!-- 반응형 레이아웃 : 화면의 폭에 반응하여 폭과 레이아웃이 변경됨 -->
+    
+    <!-- 보통 웹 컨텐츠는 container 에 쌓여 있습니다. -->
+    <div class="container">
+        <h1>정의형 목록<br>definition list : dl 요소</h1>
+        <dl>
+            <dt>제목</dt>
+            <dd>자세한 내용...</dd>
+
+            <dt>HTML</dt>
+            <dd>Hyper Text Markup Language 의 약자 입니다.</dd>
+
+            <dt>CSS</dt>
+            <dd>Design 적인 요소를 결정 합니다.</dd>
+            
+            <dt>JavaScript</dt>
+            <dd>Language 적인 요소를 담당 합니다.</dd>
+        </dl>
+    </div>
+</body>
+</html>

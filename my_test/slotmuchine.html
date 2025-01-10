@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slotmuchine.html</title>
+    <style>
+        td{
+            border: 1px dotted brown;
+            width: 50px;
+            text-align: center;
+            height: 30px;
+        }
+        .container{
+            max-width: 400px;
+            margin: auto;
+            text-align: center;
+        }
+        table{
+            width: 100%;
+        }
+        .score{
+            display: inline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p>게임 방법</p>
+        <ol>
+            <li>1,000점 으로 시작합니다.</li>
+            <li>게임 머신 가동을 위해서는 500점 차감됩니다.</li>
+            <li>그림 3개가 모두 같지 않으면 -1,000</li>
+            <li>그림 3개가 모두 같으면 + 1,000</li>
+        </ol>
+        <ul>
+            <p>만약 모두 일치하는 그림이</p>
+            <li>체리일 경우 + 100</li>
+            <li>사과일 경우 + 200</li>
+            <li>바나나일 경우 + 300</li>
+            <li>멜론일 경우 + 400</li>
+            <li>7 일 경우 + 700</li>
+        </ul>
+        <p>점수가 0점 이하가 되면 게임 오버</p>
+    </div>
+
+    <div class="container">
+
+        <div class="container">
+            <div class="score">점수: </div><div class="score" id="myScore">5,000</div>
+        </div>
+
+        <div class="container">
+            <button id="startGame">돌리기</button>
+            <table>
+                <tr>
+                    <td id="item0"></td>
+                    <td id="item1"></td>
+                    <td id="item2"></td>
+                </tr>
+            </table>
+            
+            <div id="result">결과</div>
+            <div id="calculate">.</div>
+        </div>
+
+    </div>    
+    <script>
+
+        let items = ["🍒", "🍎", "🍌", "🍈", "7"];
+        let score = 5000;
+        
+
+        //돌리기기
+        document.querySelector("#startGame").addEventListener("click",function(){
+            
+            // 시작 시 500점 차감감
+            let calculate = "점수 계산: " + score + " -500";
+            score -= 500;
+
+            // 
+            let isCorrect = [];
+            for(let i = 0 ; i < 3 ; i++){
+                let ran = parseInt(Math.random()*5) // 0-4
+                document.querySelector("#item"+i).innerText = items[ran];
+                isCorrect.push(ran);
+            }
+
+            // 시도 결과에 따른 메시지
+            if(isCorrect[0] == isCorrect[1] && isCorrect[1] == isCorrect[2]){
+                document.querySelector("#result").innerText="성공!"
+                score += 1000;
+                switch(ran){
+                    case 0:
+                        score += 100;
+                        break;
+                    case 1:
+                        score += 200;
+                        break;
+                    case 2:
+                        score += 300;
+                        break;
+                    case 3:
+                        score += 400;
+                        break;
+                    default: //4
+                        score += 700;
+                        
+                }
+
+            }else{
+                document.querySelector("#result").innerText="꽝!"
+                score -= 1000;
+            }
+
+            document.querySelector("#myScore").innerText = score;
+        });
+        
+
+    </script>
+
+
+</body>
+</html>

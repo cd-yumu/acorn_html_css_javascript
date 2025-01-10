@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>switch.html</title>
+</head>
+<body>
+    <h1>switch 문</h1>
+    무기 선택
+    <select name="" id="weapon">
+        <option value="">선택</option>
+        <option value="sword">칼</option>
+        <option value="gun">총</option>
+        <option value="arrow">활</option>
+    </select>
+    <button onclick="attack()">Attack</button>
+    <p id="result"></p>
+    <script>
+        function attack(){
+            const choosed_weapon = document.querySelector("#weapon").value
+
+            if(choosed_weapon == "sword"){
+                document.querySelector("#result").innerText = "칼로 공격";
+            }else if(choosed_weapon == "gun"){
+                document.querySelector("#result").innerText = "총으로 공격";
+            }else if(choosed_weapon == "arrow"){
+                document.querySelector("#result").innerText = "활로 공격";
+            }else{
+                document.querySelector("#result").innerText = "무기를 선택하셔야죠..";
+
+            }
+        }
+        function attack2(){
+            const choosed_weapon = document.querySelector("#weapon").value;
+
+            switch(choosed_weapon){
+                case "gun":
+                    document.querySelector("#result").innerText = "총으로 공격";
+                    break;
+                case "arrow":
+                    document.querySelector("#result").innerText = "활로 공격";
+                    break;
+                case "sword":
+                    document.querySelector("#result").innerText = "칼로 공격";  
+                    break;
+                default: 
+                    document.querySelector("#result").innerText = "무기를 선택하셔야죠..";
+                    
+            }
+        }
+
+        
+
+
+
+
+
+    </script>
+</body>
+</html>

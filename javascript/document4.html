@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document4.html</title>
+</head>
+<body>
+    <button id="addBtn">토끼추가</button>
+    <button id="resetBtn">Reset</button>
+    <div class="wrapper">
+        <img src="images/rabbit_1.png" alt="">
+    </div>
+    <script>
+        (function(){
+            //addBtn 버튼을 누르면
+            document.querySelector("#addBtn").addEventListener("click",function(){
+                // 새 요소 img 추가
+                const img = document.createElement("img");
+                // 요소의 그림 설정
+                img.setAttribute("src", "images/rabbit_1.png");
+                // img 의 위치 설정 - .wrapper 의 자식 요소로 추가 
+                document.querySelector(".wrapper").append(img);
+            });
+
+            //resetBtn 버튼을 누르면 토끼 이미지가 모두 사라지기
+            document.querySelector("#resetBtn").addEventListener("click",function(){
+                // 방법1 :  .wrapper 의 innerText 를 빈 문자열로
+                document.querySelector(".wrapper").innerText = "";
+            });
+
+
+
+        })();
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>if.html</title>
+</head>
+<body>
+    <h1>if 문 사용해 보기</h1>
+
+    <button onclick="check()">짝수 확인하기</button>
+    <button onclick="check2()">짝수인지 홀수인지 확인하기2</button>
+    <button onclick="check3()">짝수인지 홀수인지 확인하기3</button>
+    <button onclick="check4()">짝수인지 홀수인지 확인하기4</button>
+
+
+    <script>
+
+        function check(){
+            // prompt() 함수를 이용해서 숫자를 하나씩 입력 받아서
+            let num = prompt();
+            // 만일 해당 숫자가 짝수이면 짝수 이ㅃ니다. 를 콘솔창에 출력
+            if(num%2 == 0){
+                console.log("짝수입니다.")
+            }
+        };
+
+        function check2(){
+            let num = prompt("숫자를 입력하세요!");
+            if(num%2 == 0){
+                console.log("짝수입니다.")
+            }
+            if(num%2 == 1){
+                console.log("홀수입니다.")
+            }
+        };
+
+        function check3(){
+            let num = prompt("숫자를 입력하세요!");
+            if(num%2 == 0){
+                console.log("짝수입니다.")
+            }
+            else if(num%2 == 1){
+                console.log("홀수입니다.")
+            }
+        };
+
+        
+        function check4(){
+            let num = prompt("숫자를 입력하세요!");
+            // num%2 == 0 ? console.log("짝수입니다.") : console.log("홀수입니다.");
+
+            let result = num%2 != 0 ? "홀수입니다." :"짝수입니다.";
+            console.log(result);
+        };
+
+
+
+
+
+
+        let isFirst = confirm("처음 방문객이면 확인을 누르세요!");
+
+        if(isFirst){
+            console.log("반갑습니다. 처음 뵙겠습니다.");
+        }
+
+        console.log("입장 했습니다.");
+
+
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>example.html</title>
+    <style>
+        #rabbit{
+            transition: margin-left 0.5s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <button id="moveBtn">움직이기</button>
+    <button id="moveBtn2">움직이기2</button>
+
+    <button id="resetBtn">리셋</button>
+    <br>
+    <img id="rabbit" src="images/rabbit_1.png">
+    <script>
+        const rabbitImg = document.querySelector("#rabbit")
+        let mLeft = 0;
+
+
+        // 변경할 src 를 배열에 미리 순서대로 준비한다.
+        const images = ["images/rabbit_1.png", "images/rabbit2.png"];
+        // 출력할 인덱스를 관리할 변수 만들고 0으로 초기화
+        let idx = 0;
+
+        document.querySelector("#moveBtn2").addEventListener("click",function(){
+            //이동
+            mLeft += 100;
+            rabbitImg.style.marginLeft = mLeft + "px";
+
+            // 애니메이션의 스프라이트 이미지가 많을 경우에 대한 코딩
+            // 인덱스를 1 증가 시키고 
+            idx++;
+            // 만일 존재하지 않는 인덱스 번호에 도달하면
+            if(idx==2){
+                //인덱스 번호 0으로 초기화 -> 배열 첫번째부터 다시 시작
+                idx = 0;
+            }
+            rabbitImg.setAttribute("src",images[idx]);
+
+        });
+
+
+        // 버튼을 눌렀을 때 실행할 함수 등록
+        document.querySelector("#moveBtn").addEventListener("click",function(){
+            //이동
+            mLeft += 100;
+            rabbitImg.style.marginLeft = mLeft + "px";
+
+            //이미지 변환
+            const cur_image = rabbitImg.getAttribute("src");
+            cur_image == "images/rabbit_1.png" ? rabbitImg.setAttribute("src","images/rabbit2.png") : rabbitImg.setAttribute("src","images/rabbit_1.png");
+
+
+
+            // 시도 3 - 마음에 안 듦?? 오히려 위 코드보다는 가독성이 좋음? 아닌가? 몰라
+            // + getAttribute 사용법을 알게 됐다!
+            // if(cur_image == "images/rabbit_1.png"){
+            //     rabbitImg.setAttribute("src","images/rabbit2.png");
+            // }else{
+            //     rabbitImg.setAttribute("src","images/rabbit_1.png");
+            // }
+
+
+
+
+            // 시도 2 - 성공했지만 마음에 안 듦
+            // //버튼을 누른 횟수가 짝수면
+            // if(image_next){
+            //     // document.querySelector("#rabbit").src = "images/rabbit_1.png"
+            //     document.querySelector("#rabbit").setAttribute("src","images/rabbit_1.png");
+            //     image_next = false;
+            // //버튼을 누른 횟수가 홀수면
+            // }else{
+            //     // document.querySelector("#rabbit").src = "images/rabbit2.png"
+            //     document.querySelector("#rabbit").setAttribute("src","images/rabbit2.png");
+            //     image_next = true;
+            // }
+
+
+
+
+            //시도 1 - 실패!
+            // const cur_image = document.querySelector("#rabbit").src;
+            // if(cur_image == "images/rabbit_1.png"){
+            //     document.querySelector("#rabbit").src = "images/rabbit2.png";
+            // }else{
+            //     document.querySelector("#rabbit").src = "images/rabbit_1.png";
+            // }
+            
+        });
+
+        //위치 리셋
+        document.querySelector("#resetBtn").addEventListener("click",function(){
+            mLeft = 0;
+            rabbitImg.style.marginLeft = mLeft + "px";
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>json2.html</title>
+    <style>
+        /* 글이 너무 길 때 ... 으로 표시하는 방법 */
+        td{
+            max-width: 500px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+    버튼을 클릭하면 https://koreanjson.com/posts/1 로 요청해서
+    응답되는 json 문자열을 이용해서
+    글 정보를 .wrapper div 에 출력하기
+    -->
+
+    <!-- javascript 에서 페이지 전환없이 요청하는 방법에는 fetch 함수가 있다. -->
+    <h1>json 문자열 활용</h1>
+
+    <button id="getBtn">글 받아오기</button>
+    <h2>글정보</h2>
+    
+    <div class="wrapper">
+        <table border="1">
+            <colgroup>
+                <col width="100">
+                <col width="500">
+                <col width="200">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>아이디</th>
+                    <th>제목</th>
+                    <th>작성일</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+    <script>
+        // 버튼 클릭 횟수
+        let btnClick = 0;
+        document.querySelector("#getBtn").addEventListener("click", function(){
+            // 클릭 횟수 증가
+            btnClick++;
+
+            // fetch("https://koreanjson.com/posts/" + btnClick)
+            // .then(function(res){
+            //     // 응답된 문자열이 json 형식이면 res.json() 을 리턴하고
+            //     // 그 외 형식이면 res.text() 를 리턴하면 된다
+            //     return res.json();
+            // })
+            // .then(function(data){
+            //     // 위에서 res.json() 를 리턴하면 data 는 object 이고
+            //     // 위에서 res.text() 를 리턴하면 data 는 응답된 문자열(string)이다
+            //     // data 는 글 하나의 정보를 가지고 있는 object 이다
+            //     console.log(data);
+            // });
+
+            fetch("https://koreanjson.com/posts/" + btnClick)
+            .then(function(res){
+                // 응답된 문자열이 json 형식이면 res.json() 을 리턴하고
+                // 그 외 형식이면 res.text() 를 리턴하면 된다
+                return res.json();
+            })
+            .then(function(data){
+                // 위에서 res.json() 를 리턴하면 data 는 object 이고
+                // 위에서 res.text() 를 리턴하면 data 는 응답된 문자열(string)이다
+                // data 는 글 하나의 정보를 가지고 있는 object 이다
+                console.log(data);
+            });
+        });
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>나의 정보</title>
+    <style>
+        /* 
+        여기의 작성법을 배우는 것이 css 를 배우는 것이다.
+        selector(선택자) {
+            css 속성 : 적용값 ;
+        }
+        */
+        h1{
+            color: #4CAF50;
+            border-bottom: 3px solid #4CAF50;
+            text-align:center;
+            font-size: 2.5rem;
+            padding-bottom: 10px;
+        }
+
+        ul{
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0;
+            list-style-type: square;
+        }
+        li{
+            font-size: 1.2rem;
+            background-color: #ebf7ce;
+            margin: 10px 0;
+            padding: 10px 15px;
+            border-radius: 28px;
+            box-shadow: 3px 3px 6px rgb(48, 56, 48);
+            transition: all 0.3s;
+        }
+        li:hover{
+            background-color: #ffee52;
+            transform: scale(1.05);
+        }
+
+        p{
+            text-align: center;
+            color: darkgray;
+            line-height: 1.6;
+        }
+        button{
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+
+        /* 버튼 스타일 */
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 1rem;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>나의 Bucket List</h1>
+    <ul>
+        <li>번지 점프</li>
+        <li>스카이 다이빙</li>
+        <li>책 10,000권 읽기</li>
+        <li>유럽 여행</li>
+    </ul>
+    <button>버킷 추가</button>
+    <p>죽기 전에 한 번은 해봐야 겠지 <br> 근데 자신은 없네 ㅜㅜ</p>
+
+    <script>
+        // 자바스크립트 영역
+        
+        document.querySelector("button").addEventListener("click",function(){
+            let input = prompt("하고 싶은 일을 입력하세요.");
+
+            //1. 새로운 li 요소를 만들어서
+            let box = document.createElement("li");
+
+            //2. li 요소 안에 입력한 문자열을 출력하고
+            box.innerText = input;
+
+            //3. li 요소를 ul 의 자식 요소로 추가하기
+            document.querySelector("ul").append(box);
+
+
+
+        });
+    </script>
+
+</body>
+</html>

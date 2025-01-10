@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>backtic2.html</title>
+</head>
+<body>
+    <div class="wrapper"></div>
+    <div class="wrapper2"></div>
+    <div class="wrapper3"></div>
+    <script>
+        document.querySelector(".wrapper").innerText="<img src='images/kim1.png'>";
+        document.querySelector(".wrapper2").innerHTML="<img src='images/kim1.png'>";
+
+        let data = "images/kim1.png";
+        document.querySelector(".wrapper").innerHTML = `<img src = "${data}">`;
+
+    </script>
+</body>
+</html>

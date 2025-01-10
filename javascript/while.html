@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>while.html</title>
+</head>
+<body>
+    <script>
+
+        let i = 0 ;
+
+        while(i < 10){
+            console.log(i+" 번 실행중...");
+            i ++ ;
+        };
+        // for(let i = 0 ; i < 10 ; i++) 과 같지만
+        // while 문 에서는 변수 i가 루프 이후에도 계속 사용할 수 있다는 점이 다르다.
+
+        // 위 구조보다 아래 구조로 while 문을 더 많이 사용한다
+        let count = 0;
+        while(true){
+            console.log("무언가를 작업합니다!");
+            count++;
+
+            // 특정 조건에서 무한 루프를 탈출하도록 한다
+            if(count == 5){
+                break;  // (가까운)반복문 빠져나오기
+            }
+        };
+    </script>
+</body>
+</html>

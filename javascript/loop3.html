@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>loop3.html</title>
+</head>
+<body>
+
+    <input type="text" id="text" placeholder="아무 문자를 입력하세요...">
+    <button onclick="save()">button</button>
+    <button id="saveBtn">저장</button>
+
+    <script>
+
+
+        
+
+
+
+
+
+        // 빈 배열을 만들고 배열에 숫자 0 - 9 를 순서대로 저장해 보세요
+        let empty_arr1 = [];
+        for(let i = 0 ; i < 10 ; i ++){
+            // 함수를 이용해서 
+            empty_arr1.push(i)
+            // i 번째 인덱스에 i 를 저장
+            empty_arr1[i] = i;
+        }
+
+
+        // 빈 배열을 만들고 배열에 숫자 1 - 10 를 순서대로 저장해 보세요
+        let empty_arr2 = [];
+        for(let i = 0 ; i < 10 ; i ++){
+            empty_arr2.push(i+1);
+        }
+
+
+        // 빈 배열을 만들고 배열에 숫자 1 - 100 를 순서대로 저장해 보세요
+        let empty_arr3 = [];
+        for(let i = 0 ; i < 100 ; i ++){
+            empty_arr3.push(i+1);
+        }
+
+
+        // 빈 배열을 만들고 배열에 숫자 1 - 100 를 순서대로 저장한 다음
+        // 모든 숫자의 합을 콘솔창에 출력
+        let empty_arr4 = [];
+        let sum = 0;
+        for(let i = 0 ; i < 100 ; i ++){
+            empty_arr4.push(i+1);
+            sum += empty_arr4[i];
+        }
+        console.log("empty_arr4의 모든 숫자 합: "+sum);
+
+
+        // input 요소와 button 을 배치하고 그 버튼을 누르면
+        // 입력한 문자열이 빈 배열에 계속 누적되도록
+        let empty_arr5 = [];
+        function save(){
+            const text = document.querySelector("#text").value;
+            empty_arr5[empty_arr5.length] = text;
+        };
+
+        // -> 위와 같은 코딩은 매우 촌스러움 onClick = saveNumber()
+
+        // .addEventListener(”이벤트명”, callback 함수)
+        // *서로 약속된 이벤트명을 써야 합니다.
+
+        (function(){
+            
+        })();
+
+        document.querySelector("#saveBtn").addEventListener("click",function(){
+            const text = document.querySelector("#text").value;
+            empty_arr5[empty_arr5.length] = text;
+        });
+        // 왜 callback 인가유?
+        // 나중에 호출 된다는 의미
+        // 페이지 로딩 시점에 만들어지만 함수 호출은 나중에 적절한 시점에 호출되기 때문이다.
+
+
+
+
+
+    </script>
+</body>
+</html>

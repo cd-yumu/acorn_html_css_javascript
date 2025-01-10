@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document2.html</title>
+</head>
+<body>
+
+    <p>김구라</p>
+    <p>해골</p>
+    <p>원숭이</p>
+    <p>주뎅이</p>
+    <p>덩어리</p>
+
+
+    <script>
+        let names = [];
+
+        // 배열 안에 들어 있는 이름을 위의 p 요소의 innerText 로 순서대로
+
+        // for(let i = 0 ; i < 5 ; i++){
+        //     names.push(document.querySelectorAll("p")[i].innerText);
+        // }
+
+        const ps = document.querySelectorAll("p");
+
+        for(let i = 0 ; i < ps.length ; i++){
+            names.push(ps[i].innerText);
+        }
+
+        
+        
+
+
+    </script>
+
+
+</body>
+</html>

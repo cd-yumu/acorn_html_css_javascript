@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test.html</title>
+</head>
+<body>
+    <script>
+
+
+        const myName = "김구라";
+
+        const sing = function(){
+            console.log("노래를 해요!");
+        };
+
+
+        let mem = {num:1,name:"kimgura",addr:"noryangin"};
+
+        let mem2 = mem;
+
+
+
+        let foods = ['aaa', 'bbb', 'ccc'];
+
+        let foods2 = foods;
+
+
+
+
+
+        function test(){
+            console.log("called test()");
+        }
+
+        function getNum(){
+            console.log("called getNum()");
+            return 999;
+        }
+
+        function getNum2(){
+            let num = 999;
+            console.log("called getNum2");
+            return num;
+        }
+
+
+
+        // function getName(){};
+        const getName = ()=>{
+            console.log("called getName()")
+            return 'kimgura';
+        };
+        // const getName = function(){};
+
+
+        const getName2 = ()=>{
+            console.log("called getName2()");
+            let name = 'kimgura';
+            return name;
+        }
+
+
+        const isEven = ()=>{
+            console.log("called isEven");
+            return true;
+        }
+
+        const getMember = ()=>{
+            console.log("called getMember()");
+            let mem = {num:1,name:"kimgura",addr:"noryangin"};
+            return mem;
+        }
+
+        const getFriends = ()=>{
+            console.log("getFriends() is called");
+            let friends = ['김구라','해골','원숭이','주뎅이','덩어리'];
+            return friends;
+        }
+
+        let myObj = {
+            getData : function(){
+                let data = {num:1, name:"김구라"};
+                return data;
+            },
+            getDatas : ()=>{
+                let datas=['라면', '치킨', '피자'];
+                return datas;
+            }
+        }
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

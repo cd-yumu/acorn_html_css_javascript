@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step04_table.html</title>
+    <style>
+        .container{
+            max-width: 768px;
+            margin: 0 auto;
+        }
+        table{
+            border-collapse: collapse; /*테두리 겹침 제거*/
+            width: 100%;
+            
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+        th{
+            background-color: rgb(56, 154, 56);
+            color: aliceblue;
+            padding: 10px 15px;
+        }
+        td{
+            padding: 10px 15px;
+            border-bottom: 1px solid #ddd;
+            text-align: center;
+        }
+        tr:nth-child(odd){
+            background-color: beige;
+        }
+        tr:nth-child(even){
+            background-color: white;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Print information to Table Format</h1>
+        <table> 
+            <tr>
+                <th>num</th>
+                <th>name</th>
+                <th>addr</th>
+            </tr>
+
+            <tr>
+                <td>1</td>
+                <td>Kim Gura</td>
+                <td>NoRyangJin</td>
+            </tr>
+
+            <tr>
+                <td>2</td>
+                <td>Skeleton</td>
+                <td>HangSinDong</td>
+            </tr>
+
+            <tr>
+                <td>3</td>
+                <td>Monkey</td>
+                <td>Zoo</td>
+            </tr>
+
+        </table>
+
+    </div>
+</body>
+</html>

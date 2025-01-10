@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document3.html</title>
+</head>
+<body>
+    <div class="container">
+        <input type="text" id="inputMsg" placeholder="메세지 입력...">
+        <button id="addBtn">추가</button>
+        <ul id="msgList">
+            <li>어쩌구...</li>
+            <li>저쩌구...</li>
+        </ul>
+    </div>
+
+    <script>
+
+        
+        // 입력값을 추가하는 함수
+        function addText(){
+            // 사용자가 입력한 값 알기
+            const userTxt = document.querySelector("#inputMsg").value;
+            // 입력 값이 비어있지 않다면
+            if(userTxt != ""){
+                // 1. 새 요소 li 생성
+                const newLi = document.createElement("li");
+
+                // 2. 사용자가 입력한 값을 li 에 innerText 추가
+                newLi.innerText = userTxt;
+
+                // 3. #msgList 의 자식 요소로 추가
+                document.querySelector("#msgList").append(newLi);
+
+                // input 요소의 value 에 빈 문자열 대입
+                document.querySelector("#inputMsg").value = "";
+            }
+        };
+
+
+        // enter 키 누르면 텍스트 추가
+        document.querySelector("#inputMsg").addEventListener("keydown",function(e){
+            // 발생한 이벤트에 대한 정보를 담은 object 가 e 로 전달 됨
+            console.log(e.key);
+
+            if(e.key == "Enter"){
+                addText();
+            }
+        });
+
+        // 추가 버튼 클릭하면 텍스트 추가
+        document.querySelector("#addBtn").addEventListener("click", function(){
+            addText();
+        });      
+        
+        
+
+    </script>
+
+</body>
+</html>
