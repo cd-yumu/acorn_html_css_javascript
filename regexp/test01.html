@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test01.html</title>
+</head>
+<body>
+    <script>
+        const source = "Hello, world!";
+
+        // 어떤 문자열이 특정한 문자열로 시작되는지 여부를 알고 싶다.
+        const reg1 = /^H/; // 어떤 문자가 대문자 H 로 시작하는지 여부 검증
+        const result = reg1.test(source);
+
+        const reg2 = /!$/; // 어떤 문자가 느낌표로 끝나는지 여부 검증
+        const result2 = reg2.test(source);
+
+        const reg3 = /^h/; // 어떤 문자가 소문자 h 로 시작하는지 여부 검증
+        const result3 = reg3.test(source); // 정규표현식 객체는 대소문자를 가린다.
+
+        const reg4 = /^Hello/; // 어떤 문자가 Hello 로 시작하는지 여부 검증
+        const result4 = reg4.test(source);   
+        
+        const reg5 = /^Helli/; // 어떤 문자가 Helli 로 시작하는지 여부 검증
+        const result5 = reg5.test(source);  
+
+        const reg6 = /^Hello,world$/; // Hello,World 로 시작하고 Hello,World 로 끝나는지 여부 검증 (훨씬 꼼꼼하다)
+        const result6 = reg6.test(source); // 공백도 모두 일치해야 true 가 나온다.
+
+        const reg7 = /wor/; // Wor 을 포함하고 있는지 여부 검증
+        const result7 = reg7.test(source);
+
+        const reg8 = /^wor$/; 
+        const reg9 = new RegExp("^wor$")
+        const result8 = reg8.test(source);
+
+    </script>
+</body>
+</html>
