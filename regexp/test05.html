@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test05.html</title>
+    <style>
+        input{
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h1>정규 표현식 활용 예제</h1>
+    <input type="text" id="source" placeholder="문자열 입력...">
+    <input type="text" id="reg" placeholder="정규표현식 작성...">
+    <button id="extractBtn">추출</button>
+    <ul id="list">
+
+    </ul>
+    <script>
+        // $("#extractBtn").click(()=>{});
+        document.querySelector("#extractBtn").addEventListener("click",()=>{
+            // ul 에 빈만자열을 강제로 넣어줘서 ul 을 지우기
+            document.querySelector("#list").innerText = "";
+
+            // source 문자열 읽어오기
+            const source = document.querySelector("#source").value;
+            // 입력한 정규 표현식 문자열 읽어오기
+            const regtxt = document.querySelector("#reg").value;
+            // 정규 표현식 객체 만들기기
+            const reg = new RegExp(regtxt,"g");
+
+            while(true){
+                const match = reg.exec(source);
+                if(match == null) break;
+
+                // 새로운 li 요소를 만든 다음
+                const newli = document.createElement("li");
+                // innerText 를 출력한 다음
+                newli.innerText = match[0];
+                // ul 의 자식요소로 새로운 li 요소를 추가하기
+                document.querySelector("#list").append(newli);
+
+                
+                
+            }
+        });
+    </script>
+</body>
+</html>

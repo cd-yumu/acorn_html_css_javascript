@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test04.html</title>
+</head>
+<body>
+    <ul>
+
+    </ul>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <script>
+        const source = "kimgura is kimgura or leegura is leegura";
+        // 위의 문자열에서 단어만 추출해서 ul 에 출력해보세요
+
+        // source 의 전역(global) 에서 단어만 추출할 정규표현식 객체
+        const reg = /[^ ]+/g;
+        while(true){
+            const match = reg.exec(source);
+            if(match==null) break;
+            $("<li>").text(match[0]).appendTo("ul");
+            
+            // // 단어
+            // const word = match[0];
+            // // 새로운 li 요소를 만든담
+            // const newLi = document.createElement("li");
+            // // innerText 를 출력한다음
+            // newLi.innerText = word;
+            // // ul 의 자식 요소로 li 요소를 추가하기
+            // document.querySelector("li").append(newLi);
+        } 
+
+    </script>
+</body>
+</html>
