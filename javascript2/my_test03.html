@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        
+        function f (){
+            console.log("hello");
+        };
+
+        f();
+
+        const f2 = ()=>{
+            console.log("hello2")
+        }
+
+        f2();
+
+        const f3 = function(){
+            console.log("hello3")
+        }
+
+        f3();
+
+
+
+        const ff = (num, name, addr)=>{ console.log(num, name, addr) };
+
+        ff(1, "맹구", "서울");
+        ff();
+
+        function printMsg(...item){
+            console.log(item);
+        };
+
+    </script>
+</body>
+</html>
