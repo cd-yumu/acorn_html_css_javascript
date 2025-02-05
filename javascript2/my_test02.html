@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+</head>
+<body>
+    <ul id="list">
+    </ul>
+    <button type="button"></button>
+    <script>
+        
+        document.querySelector("#list").insertAdjacentHTML("beforeend","<li>맹구</li>");
+
+        const li1 = document.createElement('li');
+        li1.innerText = "맹구"
+        document.querySelector("#list").insertAdjacentElement("beforeend",li1);
+
+        const li2 = document.createElement('li');
+        li2.innerText = "맹구"
+        document.querySelector("#list").append(li2);
+
+        $("<li>").text("맹구").appendTo("#list");
+
+    </script>
+</body>
+</html>

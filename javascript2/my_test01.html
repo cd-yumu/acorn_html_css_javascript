@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>step01_foreach.html</title>
+    
+</head>
+<body>
+
+    <ul id="list">
+    </ul>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <script>
+        const arr = ["맹구", "건강이", "메롱이"];
+    
+        /*
+        arr.forEach((item)=>{
+            $("<li>").text(item).appendTo("#list");
+        });
+        */
+        
+        /*
+        arr.map(item=>`<li>${item}</li>`).forEach((item)=>{
+            document.querySelector("#list").insertAdjacentHTML("beforeend",item);
+        });
+        */
+
+        const re = arr.concat("큰메롱이");
+        const re2 = arr.push("큰메롱이");
+        const re3 = [...arr, "큰큰메롱이"];
+        
+    </script>
+</body>
+</html>
