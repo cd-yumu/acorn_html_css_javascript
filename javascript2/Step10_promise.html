@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step10_promise.html</title>
+</head>
+<body>
+    <button onclick="test()">눌러보셈</button>
+    <script>
+        
+        function test(){
+            // promise 객체 생성 
+            // Promise 객체가 기본제공 되기 때문에 바로 사용 가능 (javascript class)
+            const p1 = new Promise((resolve, reject)=>{
+                // 함수의 매개 변수에 두 가지 함수가 전달된다.
+                // resolve() 는 작업이 성공되었을 때 호출하는 함수 (약속이 해결 - resolve)
+                // reject() 는 실패 했을때 호출하는 함수   (약속을 거절 - reject)
+                let isSuccess = true;
+
+                // 실패도 성공도 되지 않을 경우는 pending 상태다.
+
+                // 테스트를 위해 약속 해결 시간을 지연시키기
+                setTimeout(()=>{
+                    if(isSuccess){
+                        resolve("작업 성공!"); // 이후 resolve 는 then 의 result 에 전달 
+                    } else {
+                        reject("작업 실패ㅜㅜ"); // 이후 reject 는 catch 의 err 에 전달
+                    }
+                },3000); // 3초 있다 ()=>{} 함수가 실행됨됨
+
+                
+                
+            });
+
+            // promise 가 이행된다면 then() 안에 있는 함수가 호출되고
+            p1.then(result => {
+                // result 매개 변수에 결과 데이터가 담겨 있는 구조이다.
+                console.log(result);
+            })
+            .catch(err=>{ // Promise 가 reject 되면 catch() 안에 있는 함수가 호출된다.
+                console.log(err);
+            })
+            .finally(()=>{
+                // 약속이행, 실패 여부와 상관 없이 호출되는 함수
+                console.log("작업이 완료 되었습니다.");
+            });
+        }
+
+    </script>
+</body>
+</html>
